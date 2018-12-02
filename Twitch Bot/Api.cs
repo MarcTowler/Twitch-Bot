@@ -17,12 +17,14 @@ namespace Twitch_Bot
         private TwitchAPI api;
         TwitchLib.Api.Services.FollowerService followerService;
         List<String> channel = new List<string>();
+        DateTime time;
 
         private Form1 form;
 
         public Api(Form1 formIn)
         {
             form = formIn;
+            time = DateTime.Now;
 
             channel.Add(Resources.channel_name); //hacky workaround for now
 
@@ -95,6 +97,12 @@ namespace Twitch_Bot
 
             //form.WriteChat(follower.FromUserId);
             //form.AddEvent(follower.FromUserId);
+
+            if(follower.FollowedAt < time)
+            {
+                //This is an old follow, drop out of the function
+                return;
+            }
 
             var username = api.V5.Users.GetUserByIDAsync(follower.FromUserId).GetAwaiter().GetResult();
 
