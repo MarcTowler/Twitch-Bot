@@ -59,11 +59,11 @@
             // 
             // panel3
             // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.Controls.Add(this.EventsBox);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.Viewers);
             this.panel3.Controls.Add(this.ViewersBox);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel3.Location = new System.Drawing.Point(966, 43);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(200, 647);
@@ -71,6 +71,7 @@
             // 
             // EventsBox
             // 
+            this.EventsBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.EventsBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(54)))));
             this.EventsBox.ForeColor = System.Drawing.SystemColors.Window;
             this.EventsBox.FormattingEnabled = true;
@@ -81,6 +82,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.25F);
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
@@ -92,6 +94,7 @@
             // 
             // Viewers
             // 
+            this.Viewers.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Viewers.AutoSize = true;
             this.Viewers.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.25F);
             this.Viewers.ForeColor = System.Drawing.SystemColors.ButtonFace;
@@ -103,6 +106,7 @@
             // 
             // ViewersBox
             // 
+            this.ViewersBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ViewersBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(54)))));
             this.ViewersBox.ForeColor = System.Drawing.SystemColors.Window;
             this.ViewersBox.FormattingEnabled = true;
@@ -113,14 +117,18 @@
             // 
             // textBox1
             // 
+            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.textBox1.Location = new System.Drawing.Point(206, 666);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(669, 20);
             this.textBox1.TabIndex = 3;
-            this.textBox1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyUp);
+            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             // 
             // chat
             // 
+            this.chat.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.chat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(54)))));
             this.chat.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.chat.ForeColor = System.Drawing.SystemColors.Window;
@@ -129,9 +137,11 @@
             this.chat.Size = new System.Drawing.Size(754, 605);
             this.chat.TabIndex = 4;
             this.chat.Text = "";
+            this.chat.TextChanged += new System.EventHandler(this.chat_TextChanged);
             // 
             // Submit
             // 
+            this.Submit.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.Submit.Location = new System.Drawing.Point(881, 666);
             this.Submit.Name = "Submit";
             this.Submit.Size = new System.Drawing.Size(75, 23);

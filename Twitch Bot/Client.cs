@@ -137,7 +137,7 @@ namespace Twitch_Bot
         private void OnBeingHosted(object sender, OnBeingHostedArgs e)
         {
             form.WriteChat(e.BeingHostedNotification.Channel + " hosted with " + e.BeingHostedNotification.Viewers + " viewers");
-            client.SendMessage(Resources.channel_name,e.BeingHostedNotification.HostedByChannel);
+            //client.SendMessage(Resources.channel_name,e.BeingHostedNotification.HostedByChannel);
             form.AddEvent(e.BeingHostedNotification.Channel + " hosted (" + e.BeingHostedNotification.Viewers + ")");
             form.AddEvent(e.BeingHostedNotification.HostedByChannel + " hosted (" + e.BeingHostedNotification.Viewers + ")");
         }
@@ -155,13 +155,13 @@ namespace Twitch_Bot
         private void OnConnected(object sender, OnConnectedArgs e)
         {
             form.WriteChat("Connected to " + e.AutoJoinChannel);
-            client.SendMessage(e.AutoJoinChannel, "Connected to " + e.AutoJoinChannel);
+            //client.SendMessage(e.AutoJoinChannel, "Connected to " + e.AutoJoinChannel);
         }
 
         private void OnJoinedChannel(object sender, OnJoinedChannelArgs e)
         {
             form.WriteChat("Hey guys! I am a bot connected via TwitchLib!");
-            client.SendMessage(e.Channel, "Hey guys! I am a bot connected via TwitchLib!");
+            //client.SendMessage(e.Channel, "Hey guys! I am a bot connected via TwitchLib!");
         }
 
         #region Messaging
