@@ -46,26 +46,22 @@ namespace Twitch_Bot
             switch (e.ReSubscriber.SubscriptionPlan)
             {
                 case SubscriptionPlan.Prime:
-                    form.WriteChat(e.ReSubscriber.DisplayName + " just resubscribed with Twitch Prime for " + e.ReSubscriber.Months + " months!!! itslitHype itslitHype itslitHype");
-                    client.SendMessage(e.Channel, e.ReSubscriber.DisplayName + " just resubscribed with Twitch Prime for " + e.ReSubscriber.Months + " months!!! itslitHype itslitHype itslitHype");
+                    form.WriteChat(e.ReSubscriber.DisplayName + " just resubscribed with Twitch Prime for " + e.ReSubscriber.Months + " months!!! itslitHype itslitHype itslitHype", true);
                     form.AddEvent("Twitch Prime resub " + e.ReSubscriber.DisplayName + "(" + e.ReSubscriber.Months + ")");
 
                     break;
                 case SubscriptionPlan.Tier1:
-                    form.WriteChat(e.ReSubscriber.DisplayName + " just resubscribed for " + e.ReSubscriber.Months + " months!!! itslitHype itslitHype itslitHype");
-                    client.SendMessage(e.Channel, e.ReSubscriber.DisplayName + " just resubscribed for " + e.ReSubscriber.Months + " months!!! itslitHype itslitHype itslitHype");
+                    form.WriteChat(e.ReSubscriber.DisplayName + " just resubscribed for " + e.ReSubscriber.Months + " months!!! itslitHype itslitHype itslitHype", true);
                     form.AddEvent("Tier 1 resub " + e.ReSubscriber.DisplayName + "(" + e.ReSubscriber.Months + ")");
 
                     break;
                 case SubscriptionPlan.Tier2:
-                    form.WriteChat(e.ReSubscriber.DisplayName + " just resubscribed at Tier 2 for " + e.ReSubscriber.Months + " months!!! itslitHype itslitHype itslitHype");
-                    client.SendMessage(e.Channel, e.ReSubscriber.DisplayName + " just resubscribed at Tier 2 for " + e.ReSubscriber.Months + " months!!! itslitHype itslitHype itslitHype");
+                    form.WriteChat(e.ReSubscriber.DisplayName + " just resubscribed at Tier 2 for " + e.ReSubscriber.Months + " months!!! itslitHype itslitHype itslitHype", true);
                     form.AddEvent("Tier 2 resub " + e.ReSubscriber.DisplayName + "(" + e.ReSubscriber.Months + ")");
 
                     break;
                 case SubscriptionPlan.Tier3:
-                    form.WriteChat(e.ReSubscriber.DisplayName + " just resubscribed at Tier 3 for " + e.ReSubscriber.Months + " months!!! itslitHype itslitHype itslitHype");
-                    client.SendMessage(e.Channel, e.ReSubscriber.DisplayName + " just resubscribed at Tier 3 for " + e.ReSubscriber.Months + " months!!! itslitHype itslitHype itslitHype");
+                    form.WriteChat(e.ReSubscriber.DisplayName + " just resubscribed at Tier 3 for " + e.ReSubscriber.Months + " months!!! itslitHype itslitHype itslitHype", true);
                     form.AddEvent("Tier 3 resub " + e.ReSubscriber.DisplayName + "(" + e.ReSubscriber.Months + ")");
 
                     break;
@@ -77,20 +73,17 @@ namespace Twitch_Bot
             switch (e.GiftedSubscription.MsgParamSubPlan)
             {
                 case SubscriptionPlan.Tier1:
-                    form.WriteChat(e.GiftedSubscription.DisplayName + " just gifted a Tier 1 sub to " + e.GiftedSubscription.MsgParamRecipientDisplayName + " a sub!!! itslitHype itslitHype itslitHype");
-                    client.SendMessage(e.Channel, e.GiftedSubscription.DisplayName + " just gifted a Tier 1 sub to " + e.GiftedSubscription.MsgParamRecipientDisplayName + " a sub!!! itslitHype itslitHype itslitHype");
+                    form.WriteChat(e.GiftedSubscription.DisplayName + " just gifted a Tier 1 sub to " + e.GiftedSubscription.MsgParamRecipientDisplayName + " a sub!!! itslitHype itslitHype itslitHype", true);
                     form.AddEvent("Tier 1 gift from " + e.GiftedSubscription.DisplayName + " to " + e.GiftedSubscription.MsgParamRecipientDisplayName);
 
                     break;
                 case SubscriptionPlan.Tier2:
-                    form.WriteChat(e.GiftedSubscription.DisplayName + " just gifted a Tier 2 sub to " + e.GiftedSubscription.MsgParamRecipientDisplayName + " a sub!!! itslitHype itslitHype itslitHype");
-                    client.SendMessage(e.Channel, e.GiftedSubscription.DisplayName + " just gifted a Tier 2 sub to " + e.GiftedSubscription.MsgParamRecipientDisplayName + " a sub!!! itslitHype itslitHype itslitHype");
+                    form.WriteChat(e.GiftedSubscription.DisplayName + " just gifted a Tier 2 sub to " + e.GiftedSubscription.MsgParamRecipientDisplayName + " a sub!!! itslitHype itslitHype itslitHype", true);
                     form.AddEvent("Tier 2 gift from " + e.GiftedSubscription.DisplayName + " to " + e.GiftedSubscription.MsgParamRecipientDisplayName);
 
                     break;
                 case SubscriptionPlan.Tier3:
-                    form.WriteChat(e.GiftedSubscription.DisplayName + " just gifted a Tier 3 sub to " + e.GiftedSubscription.MsgParamRecipientDisplayName + " a sub!!! itslitHype itslitHype itslitHype");
-                    client.SendMessage(e.Channel, e.GiftedSubscription.DisplayName + " just gifted a Tier 3 sub to " + e.GiftedSubscription.MsgParamRecipientDisplayName + " a sub!!! itslitHype itslitHype itslitHype");
+                    form.WriteChat(e.GiftedSubscription.DisplayName + " just gifted a Tier 3 sub to " + e.GiftedSubscription.MsgParamRecipientDisplayName + " a sub!!! itslitHype itslitHype itslitHype", true);
                     form.AddEvent("Tier 3 gift from " + e.GiftedSubscription.DisplayName + " to " + e.GiftedSubscription.MsgParamRecipientDisplayName);
 
                     break;
@@ -102,26 +95,22 @@ namespace Twitch_Bot
             switch(e.Subscriber.SubscriptionPlan)
             {
                 case SubscriptionPlan.Prime:
-                    form.WriteChat(e.Subscriber.DisplayName + " just subscribed with Twitch Prime!!! itslitHype itslitHype itslitHype");
-                    client.SendMessage(e.Channel, e.Subscriber.DisplayName + " just subscribed with Twitch Prime!!! itslitHype itslitHype itslitHype");
+                    form.WriteChat(e.Subscriber.DisplayName + " just subscribed with Twitch Prime!!! itslitHype itslitHype itslitHype", true);
                     form.AddEvent("New Twitch Prime Sub " + e.Subscriber.DisplayName);
 
                     break;
                 case SubscriptionPlan.Tier1:
-                    form.WriteChat(e.Subscriber.DisplayName + " just subscribed!!! itslitHype itslitHype itslitHype");
-                    client.SendMessage(e.Channel, e.Subscriber.DisplayName + " just subscribed!!! itslitHype itslitHype itslitHype");
+                    form.WriteChat(e.Subscriber.DisplayName + " just subscribed!!! itslitHype itslitHype itslitHype", true);
                     form.AddEvent("New Tier 1 Sub " + e.Subscriber.DisplayName);
 
                     break;
                 case SubscriptionPlan.Tier2:
-                    form.WriteChat(e.Subscriber.DisplayName + " just subscribed at Tier 2!!! itslitHype itslitHype itslitHype");
-                    client.SendMessage(e.Channel, e.Subscriber.DisplayName + " just subscribed at Tier 2!!! itslitHype itslitHype itslitHype");
+                    form.WriteChat(e.Subscriber.DisplayName + " just subscribed at Tier 2!!! itslitHype itslitHype itslitHype", true);
                     form.AddEvent("New Tier 2 Sub " + e.Subscriber.DisplayName);
 
                     break;
                 case SubscriptionPlan.Tier3:
-                    form.WriteChat(e.Subscriber.DisplayName + " just subscribed at Tier 3!!! itslitHype itslitHype itslitHype");
-                    client.SendMessage(e.Channel, e.Subscriber.DisplayName + " just subscribed at Tier 3!!! itslitHype itslitHype itslitHype");
+                    form.WriteChat(e.Subscriber.DisplayName + " just subscribed at Tier 3!!! itslitHype itslitHype itslitHype", true);
                     form.AddEvent("New Tier 3 Sub " + e.Subscriber.DisplayName);
 
                     break;
@@ -131,13 +120,12 @@ namespace Twitch_Bot
 
         private void OnRaidNotification(object sender, OnRaidNotificationArgs e)
         {
-            form.WriteChat(e.RaidNotificaiton.DisplayName + " raided!!!!!!!!");
+            form.WriteChat(e.RaidNotificaiton.DisplayName + " raided!!!!!!!!", true);
         }
 
         private void OnBeingHosted(object sender, OnBeingHostedArgs e)
         {
-            form.WriteChat(e.BeingHostedNotification.Channel + " hosted with " + e.BeingHostedNotification.Viewers + " viewers");
-            //client.SendMessage(Resources.channel_name,e.BeingHostedNotification.HostedByChannel);
+            form.WriteChat(e.BeingHostedNotification.Channel + " hosted with " + e.BeingHostedNotification.Viewers + " viewers", true);
             form.AddEvent(e.BeingHostedNotification.Channel + " hosted (" + e.BeingHostedNotification.Viewers + ")");
             form.AddEvent(e.BeingHostedNotification.HostedByChannel + " hosted (" + e.BeingHostedNotification.Viewers + ")");
         }
@@ -154,14 +142,12 @@ namespace Twitch_Bot
 
         private void OnConnected(object sender, OnConnectedArgs e)
         {
-            form.WriteChat("Connected to " + e.AutoJoinChannel);
-            //client.SendMessage(e.AutoJoinChannel, "Connected to " + e.AutoJoinChannel);
+            form.WriteChat("Connected to " + e.AutoJoinChannel, false);
         }
 
         private void OnJoinedChannel(object sender, OnJoinedChannelArgs e)
         {
-            form.WriteChat("Hey guys! I am a bot connected via TwitchLib!");
-            //client.SendMessage(e.Channel, "Hey guys! I am a bot connected via TwitchLib!");
+            form.WriteChat("Hey guys! I am a bot connected via TwitchLib!", true);
         }
 
         #region Messaging
@@ -176,7 +162,7 @@ namespace Twitch_Bot
             {
                 Console.WriteLine(testing.Key + ": " + testing.Value);
             }*/
-            form.WriteChat(/*e.ChatMessage.Badges + */e.ChatMessage.Username + ": " + e.ChatMessage.Message);
+            form.WriteChat(/*e.ChatMessage.Badges + */e.ChatMessage.Username + ": " + e.ChatMessage.Message, false);
 
             //Lets check for a command
             //if(e.ChatMessage.)
@@ -187,19 +173,19 @@ namespace Twitch_Bot
 
         private void OnWhisperReceived(object sender, OnWhisperReceivedArgs e)
         {
-            form.WriteChat(e.WhisperMessage.Username + " >>> " + e.WhisperMessage.Message);
+            form.WriteChat(e.WhisperMessage.Username + " >>> " + e.WhisperMessage.Message, false);
 
             //check for a command else we will send a wtf message back
             if (e.WhisperMessage.Message.Contains("!"))
             {
                 //its a command
                 client.SendWhisper(e.WhisperMessage.Username, "Sorry commands via whisper is not yet supported");
-                form.WriteChat(Resources.bot_name + " >>> " + e.WhisperMessage.Username + " Sorry commands via whisper is not yet supported");
+                form.WriteChat(Resources.bot_name + " >>> " + e.WhisperMessage.Username + " Sorry commands via whisper is not yet supported", false);
             }
             else
             {
                 client.SendWhisper(e.WhisperMessage.Username, "Thanks for the whisper, unfortunately it doesn't get read yet");
-                form.WriteChat(Resources.bot_name + " >>> " + e.WhisperMessage.Username + " Thanks for the whisper, unfortunately it doesn't get read yet");
+                form.WriteChat(Resources.bot_name + " >>> " + e.WhisperMessage.Username + " Thanks for the whisper, unfortunately it doesn't get read yet", false);
             }
 
         }

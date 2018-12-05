@@ -17,7 +17,7 @@ namespace Twitch_Bot
         private TwitchAPI api;
         TwitchLib.Api.Services.FollowerService followerService;
         List<String> channel = new List<string>();
-        DateTime time;
+        readonly DateTime time;
 
         private Form1 form;
 
@@ -40,7 +40,7 @@ namespace Twitch_Bot
 
             Monitor = new LiveStreamMonitorService(api, 60);
 
-            List<string> lst = new List<string> { "ID1", "ID2" };
+            List<string> lst = new List<string> { Resources.channel_name};
             Monitor.SetChannelsById(lst);
 
             Monitor.OnStreamOnline   += Monitor_OnStreamOnline;
@@ -54,8 +54,8 @@ namespace Twitch_Bot
             followerService.OnNewFollowersDetected += FollowerService_OnNewFollowersDetected;
             //followerService.OnServiceStopped += (o, e) => Console.WriteLine("Follower service started");
             //followerService.OnServiceStarted += (o, e) => Console.WriteLine($"Follower service started with interval: seconds.");
-            followerService.OnServiceStopped += (o, e) => form.WriteChat("Follower service started");
-            followerService.OnServiceStarted += (o, e) => form.WriteChat($"Follower service started with default interval");
+            followerService.OnServiceStopped += (o, e) => form.WriteChat("Follower service started", false);
+            followerService.OnServiceStarted += (o, e) => form.WriteChat($"Follower service started with default interval", false);
 
             followerService.Start();
 
@@ -106,7 +106,7 @@ namespace Twitch_Bot
 
             var username = api.V5.Users.GetUserByIDAsync(follower.FromUserId).GetAwaiter().GetResult();
 
-            form.WriteChat(username.DisplayName + " just followed, thanks!");
+            form.WriteChat(username.DisplayName + " just followed, thanks!", true);
             form.AddEvent("New follower " + username.DisplayName);
             //form.WriteChat(username + " just followed, thanks!");
             //form.AddEvent("New follower " + username);

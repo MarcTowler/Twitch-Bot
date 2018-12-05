@@ -21,7 +21,7 @@ namespace Twitch_Bot
 
         delegate void SetTextCallback(string text);
 
-        public void WriteChat(string text)
+        public void WriteChat(string text, bool toTwitch)
         {
             /*
              * Only works if we want a single write to the box
@@ -38,19 +38,23 @@ namespace Twitch_Bot
             }*/
             if(InvokeRequired)
             {
-                this.Invoke((MethodInvoker)delegate () { WriteChat(text); });
+                this.Invoke((MethodInvoker)delegate () { WriteChat(text, toTwitch); });
                 return;
             }
 
             chat.Text = chat.Text + "\n" + text;
 
-            client.Send(Resources.channel_name, text);
+            if (toTwitch)
+            {
+                client.Send(Resources.channel_name, text);
+            }
         }
 
         private void chat_TextChanged(object sender, EventArgs e)
         {
             // set the current caret position to the end
             chat.SelectionStart = chat.Text.Length;
+
             // scroll it automatically
             chat.ScrollToCaret();
         }
@@ -87,8 +91,7 @@ namespace Twitch_Bot
         {
             if(e.KeyCode == Keys.Enter || e.KeyCode == Keys.Return)
             {
-                WriteChat(Resources.bot_name + ": " + textBox1.Text);
-                client.Send(Resources.channel_name, textBox1.Text);
+                WriteChat(Resources.bot_name + ": " + textBox1.Text, true);
 
                 //Stops the bing
                 e.SuppressKeyPress = true;
@@ -103,8 +106,7 @@ namespace Twitch_Bot
             //Lets check to see if we actually have text to send, if we do not then ignore
             if(textBox1.Text != "")
             {
-                WriteChat(Resources.bot_name + ": " + textBox1.Text);
-                client.Send(Resources.channel_name, textBox1.Text);
+                WriteChat(Resources.bot_name + ": " + textBox1.Text, true);
 
                 //Lets clear the input
                 textBox1.Text = "";
